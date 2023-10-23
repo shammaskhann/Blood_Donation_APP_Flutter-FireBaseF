@@ -95,6 +95,8 @@ class _DonorDetailScreenState extends State<DonorDetailScreen> {
                 ],
               ),
             ),
+            //Map
+            Image.asset("assets/Icons/fakemap.png"),
             FutureBuilder(
                 future: donorDetailViewModel.isManager(),
                 builder: (context, snapshot) {

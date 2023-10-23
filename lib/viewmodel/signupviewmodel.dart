@@ -44,9 +44,9 @@ class SignUpViewModel {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const LoginScreen()));
       });
-    } catch (e) {
+    } on FirebaseAuthException catch (e) {
       loading = false;
-      AuthException.authExceptionToast(e.toString());
+      AuthException.authExceptionToast(e);
     }
   }
 
