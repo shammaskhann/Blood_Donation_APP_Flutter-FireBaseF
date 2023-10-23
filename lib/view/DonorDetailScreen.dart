@@ -110,7 +110,11 @@ class _DonorDetailScreenState extends State<DonorDetailScreen> {
                         child: CustomButton(
                             title: 'Call Now',
                             loading: false,
-                            onPressed: () {}),
+                            onPressed: () async {
+                              await donorDetailViewModel.makeCall(
+                                widget.phoneNumber,
+                              );
+                            }),
                       ),
                       (snapshot.data == true)
                           ? CustomMidButton(

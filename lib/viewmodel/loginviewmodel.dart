@@ -22,7 +22,7 @@ class LoginViewModel {
           context, MaterialPageRoute(builder: (context) => const HomeScreen()));
       return true;
     }).catchError((error) {
-      AuthException.authExceptionToast(error.code);
+      AuthException.authExceptionToast(error);
       return false;
     });
   }

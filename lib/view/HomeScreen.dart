@@ -30,12 +30,12 @@ class _HomeScreenState extends State<HomeScreen> {
           actions: [
             IconButton(
                 onPressed: () {
-                  auth.signOut();
-                  Utils.toastMessage("LOGOUT SUCESSFULLY");
+                  // auth.signOut();
+                  // Utils.toastMessage("LOGOUT SUCESSFULLY");
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const LoginScreen(),
+                        builder: (context) => const LogOutScreen(),
                       ));
                 },
                 icon: const Icon(Icons.logout))
