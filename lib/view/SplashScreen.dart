@@ -27,12 +27,13 @@ class _SplashScreenState extends State<SplashScreen> {
             Icon(
               Icons.water_drop_outlined,
               color: AppColors.white,
-              size: 45,
+              size: 85,
             ),
             Text("ZINDAGI",
                 style: TextStyle(
+                  fontFamily: 'Roboto',
                   color: AppColors.white,
-                  fontSize: 30,
+                  fontSize: 60,
                 ))
           ],
         ),

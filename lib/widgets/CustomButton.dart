@@ -23,9 +23,9 @@ class CustomButton extends StatelessWidget {
         },
         child: Container(
           height: 60,
-          width: MediaQuery.of(context).size.width * 0.4,
+          width: MediaQuery.of(context).size.width * 0.65,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               colors: [
                 AppColors.primaryColor,
                 AppColors.primaryColor,
@@ -37,7 +37,7 @@ class CustomButton extends StatelessWidget {
           ),
           child: Center(
             child: (loading)
-                ? const CircularProgressIndicator()
+                ? const CircularProgressIndicator(color: AppColors.white)
                 : Text(
                     title,
                     style: const TextStyle(

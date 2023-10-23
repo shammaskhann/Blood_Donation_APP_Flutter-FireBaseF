@@ -12,8 +12,7 @@ class DonorEditViewModel {
   void getDetail(String uid) async {
     DocumentSnapshot snapshot = await db.collection("users").doc(uid).get();
     Map<String, dynamic> data = snapshot.data() as Map<String, dynamic>;
-    nameController.text = data['name'];
-    locationController.text = data['Location'];
+    nameController.text = data['name']['Phone Number'];
     cityController.text = data['City'];
     dateController.text = data['Date'].toDate().toString();
     bloodGroup = data['Blood Group'];

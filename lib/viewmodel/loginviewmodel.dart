@@ -20,8 +20,10 @@ class LoginViewModel {
       Utils.toastMessage("LOGIN SUCESSFULLY");
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+      return true;
     }).catchError((error) {
       AuthException.authExceptionToast(error.code);
+      return false;
     });
   }
 }

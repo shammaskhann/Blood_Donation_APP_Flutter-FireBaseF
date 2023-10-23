@@ -70,17 +70,46 @@ class _DonorDetailScreenState extends State<DonorDetailScreen> {
                   const SizedBox(
                     height: 30,
                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Blood Group'),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(8.0),
+                        decoration: BoxDecoration(
+                          color: AppColors.primaryColor,
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Text(
+                          widget.bloodgroup,
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.white),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
             FutureBuilder(
                 future: donorDetailViewModel.isManager(),
                 builder: (context, snapshot) {
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                  if (snapshot.connectionState == ConnectionState.waiting)
+                    return const CircularProgressIndicator();
+                  return Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CustomButton(
-                          title: 'Call Now', loading: false, onPressed: () {}),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: CustomButton(
+                            title: 'Call Now',
+                            loading: false,
+                            onPressed: () {}),
+                      ),
                       (snapshot.data == true)
                           ? CustomMidButton(
                               title: 'Edit',

@@ -9,6 +9,7 @@ class SignUpViewModel {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  var pickedDateController;
   bool isManager = false;
   final locationController = TextEditingController();
   final cityController = TextEditingController();
@@ -33,10 +34,10 @@ class SignUpViewModel {
           'email': emailController.text.trim(),
           'password': passwordController.text.trim(),
           'isManager': isManager,
-          'Location': locationController.text.trim(),
+          'Phone Number': locationController.text.trim(),
           "City": cityController.text.trim(),
           "Blood Group": bloodGroup ?? "A",
-          "Date": DateTime.now(),
+          "Date": pickedDateController,
           'uid': value.user!.uid,
         });
         Utils.toastMessage("SIGNED UP SUCESSFULLY");
@@ -47,5 +48,20 @@ class SignUpViewModel {
       loading = false;
       AuthException.authExceptionToast(e.toString());
     }
+  }
+
+  Future<DateTime?> selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      helpText: "SELECT BLOOD DONATION DATE",
+      cancelText: "CANCEL",
+      confirmText: "SELECT",
+      fieldLabelText: "SELECT BLOOD DONATION DATE",
+      fieldHintText: "SELECT BLOOD DONATION DATE",
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(1900),
+      lastDate: DateTime(2024),
+    );
+    return picked;
   }
 }
