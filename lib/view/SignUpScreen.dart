@@ -40,9 +40,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           width: MediaQuery.sizeOf(context).width,
                           color: AppColors.primaryColor,
                           child: const Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
+                              SizedBox(
+                                height: 20,
+                              ),
                               Icon(
                                 Icons.water_drop_outlined,
                                 color: AppColors.white,
@@ -56,7 +59,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     fontWeight: FontWeight.w600,
                                   )),
                               SizedBox(
-                                height: 30,
+                                height: 50,
                               ),
                             ],
                           ),
@@ -68,11 +71,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ],
                     )),
                 Positioned(
-                  top: 180,
+                  top: MediaQuery.of(context).size.height * 0.15,
                   left: 30,
                   right: 30,
                   child: Container(
-                      height: MediaQuery.of(context).size.height * 0.73,
+                      height: MediaQuery.of(context).size.height * 0.8,
                       width: MediaQuery.sizeOf(context).width * 0.85,
                       decoration: BoxDecoration(
                           color: AppColors.white,
@@ -90,7 +93,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           const SizedBox(
-                            height: 20,
+                            height: 5,
                           ),
                           const Text("SIGN UP",
                               style: TextStyle(
@@ -103,7 +106,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               child: Column(children: [
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
-                                      horizontal: 15.0, vertical: 8),
+                                      horizontal: 15.0, vertical: 0),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
@@ -375,7 +378,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       )),
                 ),
                 Positioned(
-                    bottom: 0,
+                    top: MediaQuery.of(context).size.height * 0.9,
                     left: 50,
                     right: 50,
                     child: CustomButton(

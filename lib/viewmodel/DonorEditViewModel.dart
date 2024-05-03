@@ -17,7 +17,8 @@ class DonorEditViewModel {
     locationController.text = data['Phone Number'];
     cityController.text = data['City'];
     dateController.text = data['Date'].toDate().toString();
-    bloodGroup = data['Blood Group'];
+    bloodGroup = data['Blood Group'].toString();
+    print(bloodGroup.toString());
   }
 
   saveDetails(String uid) async {

@@ -61,11 +61,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   )),
               Positioned(
-                top: 250,
+                top: MediaQuery.of(context).size.height * 0.25,
                 left: 30,
                 right: 30,
                 child: Container(
-                    height: MediaQuery.of(context).size.height * 0.4,
+                    height: MediaQuery.of(context).size.height * 0.465,
                     width: MediaQuery.sizeOf(context).width * 0.85,
                     decoration: BoxDecoration(
                         color: AppColors.white,
@@ -181,7 +181,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     )),
               ),
               Positioned(
-                  bottom: 80,
+                  top: MediaQuery.of(context).size.height * 0.65,
                   left: 30,
                   right: 30,
                   child: Column(
@@ -204,13 +204,13 @@ class _LoginScreenState extends State<LoginScreen> {
                               });
                             }
                           }),
-                      const SizedBox(
-                        height: 10,
-                      ),
+                      // const SizedBox(
+                      //   height: 10,
+                      // ),
                       const Text("OR"),
-                      const SizedBox(
-                        height: 10,
-                      ),
+                      // const SizedBox(
+                      //   height: 10,
+                      // ),
                       CustomButton(
                           title: "Sign Up",
                           loading: false,
